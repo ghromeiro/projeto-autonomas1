@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f4f0ea">
+    <meta name="description" content="Projeto Autônomas: consultoria, estratégia e desenvolvimento profissional para mulheres.">
 
-    <title>Projeto Autônomas</title>
+    <title>Projeto Autônomas | Consultoria para Mulheres</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://images.unsplash.com">
 
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
     <style>
-
         * {
             margin: 0;
             padding: 0;
@@ -32,6 +34,7 @@
 
         img {
             width: 100%;
+            height: 100%;
             display: block;
             object-fit: cover;
         }
@@ -41,16 +44,13 @@
             text-decoration: none;
         }
 
-        /* HEADER */
-
         header {
-            height: 90px;
-            padding: 0 5vw;
-
+            min-height: 90px;
+            padding: 20px 5vw;
             display: flex;
             align-items: center;
             justify-content: space-between;
-
+            gap: 20px;
             border-bottom: 1px solid #d8d1c9;
         }
 
@@ -76,65 +76,55 @@
             opacity: 0.5;
         }
 
-        /* HERO */
-
         .hero {
             min-height: calc(100vh - 90px);
-
             display: grid;
             grid-template-columns: 1fr 1fr;
-
             border-bottom: 1px solid #d8d1c9;
         }
 
         .hero-text {
             padding: 8vw 6vw;
-
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
 
-        .small-title {
+        .small-title,
+        .section-label {
             font-size: 11px;
             letter-spacing: 3px;
             text-transform: uppercase;
+        }
+
+        .small-title {
             margin-bottom: 35px;
         }
 
         .hero h1 {
             font-family: "Cormorant Garamond", serif;
             font-weight: 400;
-
             font-size: clamp(60px, 7vw, 105px);
-
             line-height: 0.88;
-
             max-width: 650px;
         }
 
         .hero-description {
             margin-top: 45px;
-
             max-width: 420px;
-
             font-size: 15px;
             line-height: 1.8;
         }
 
         .hero-button {
             margin-top: 35px;
-
             width: fit-content;
-
+            max-width: 100%;
             padding: 15px 25px;
-
             border: 1px solid #252321;
-
             font-size: 11px;
             letter-spacing: 2px;
             text-transform: uppercase;
-
             transition: 0.3s;
         }
 
@@ -149,7 +139,6 @@
         }
 
         .hero-image img {
-            height: 100%;
             filter: grayscale(100%);
             transition: transform 1s ease;
         }
@@ -158,64 +147,49 @@
             transform: scale(1.03);
         }
 
-        /* SOBRE */
-
         .intro {
             padding: 130px 8vw;
-
             display: grid;
             grid-template-columns: 0.8fr 1.2fr;
-
             gap: 10vw;
-
             border-bottom: 1px solid #d8d1c9;
-        }
-
-        .section-label {
-            font-size: 11px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
         }
 
         .intro-content h2 {
             font-family: "Cormorant Garamond", serif;
-
             font-size: clamp(42px, 5vw, 70px);
-
             font-weight: 400;
             line-height: 0.95;
-
             margin-bottom: 40px;
         }
 
         .intro-content p {
             max-width: 650px;
-
             font-size: 16px;
             line-height: 1.9;
         }
 
-        /* EDITORIAL */
+        .intro-content p + p {
+            margin-top: 24px;
+        }
 
         .editorial {
             display: grid;
             grid-template-columns: 1fr 1fr;
-
             border-bottom: 1px solid #d8d1c9;
         }
 
         .editorial-image {
             height: 650px;
+            overflow: hidden;
         }
 
         .editorial-image img {
-            height: 100%;
             filter: grayscale(100%);
         }
 
         .editorial-text {
             padding: 9vw 7vw;
-
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -223,74 +197,58 @@
 
         .editorial-text h2 {
             font-family: "Cormorant Garamond", serif;
-
             font-size: clamp(50px, 6vw, 85px);
-
             font-weight: 400;
-
             line-height: 0.9;
-
-            margin-bottom: 35px;
+            margin: 35px 0;
         }
 
         .editorial-text p {
             max-width: 450px;
-
             line-height: 1.9;
-
             font-size: 15px;
         }
 
-        /* CONSULTORIA */
-
-        .mentoria {
+        .consultoria {
             padding: 120px 6vw;
-
             border-bottom: 1px solid #d8d1c9;
         }
 
-        .mentoria-header {
+        .consultoria-header {
             display: flex;
             justify-content: space-between;
             align-items: end;
-
+            gap: 35px;
             margin-bottom: 70px;
         }
 
-        .mentoria-header h2 {
+        .consultoria-header h2 {
             font-family: "Cormorant Garamond", serif;
-
-            font-size: clamp(60px, 8vw, 110px);
-
+            font-size: clamp(55px, 8vw, 110px);
             font-weight: 400;
-
             line-height: 0.8;
         }
 
-        .mentoria-header p {
+        .consultoria-header p {
             max-width: 300px;
             line-height: 1.7;
             font-size: 14px;
         }
 
-        .mentoria-grid {
+        .consultoria-grid {
             display: grid;
-
             grid-template-columns: repeat(3, 1fr);
-
             border-top: 1px solid #252321;
             border-bottom: 1px solid #252321;
         }
 
-        .mentoria-item {
+        .consultoria-item {
             padding: 40px 30px;
-
             min-height: 250px;
-
             border-right: 1px solid #252321;
         }
 
-        .mentoria-item:last-child {
+        .consultoria-item:last-child {
             border-right: none;
         }
 
@@ -299,114 +257,83 @@
             letter-spacing: 2px;
         }
 
-        .mentoria-item h3 {
+        .consultoria-item h3 {
             font-family: "Cormorant Garamond", serif;
-
             font-size: 40px;
-
             font-weight: 400;
-
             margin-top: 60px;
             margin-bottom: 15px;
         }
 
-        .mentoria-item p {
+        .consultoria-item p {
             font-size: 14px;
             line-height: 1.7;
         }
 
-        /* FRASE */
-
         .quote {
             min-height: 500px;
-
             display: flex;
-
             align-items: center;
             justify-content: center;
-
             text-align: center;
-
             padding: 80px 10vw;
-
             border-bottom: 1px solid #d8d1c9;
         }
 
         .quote h2 {
             font-family: "Cormorant Garamond", serif;
-
             font-size: clamp(45px, 6vw, 85px);
-
             font-weight: 400;
-
             line-height: 0.95;
-
             max-width: 1000px;
-
             color: #b8c9b1;
         }
 
-        /* CTA */
-
         .cta {
             padding: 130px 8vw;
-
             display: grid;
             grid-template-columns: 1fr 1fr;
-
             gap: 80px;
         }
 
         .cta h2 {
             font-family: "Cormorant Garamond", serif;
-
             font-size: clamp(60px, 8vw, 110px);
-
             font-weight: 400;
-
             line-height: 0.82;
         }
 
         .cta-right {
             display: flex;
             flex-direction: column;
-
             justify-content: center;
-
             align-items: flex-start;
         }
 
         .cta-right p {
             max-width: 450px;
-
             line-height: 1.8;
-
-            margin-bottom: 35px;
+            margin-bottom: 0;
         }
-
-        /* FOOTER */
 
         footer {
             padding: 35px 5vw;
-
             border-top: 1px solid #d8d1c9;
-
             display: flex;
             justify-content: space-between;
-
+            gap: 20px;
             font-size: 11px;
-
             letter-spacing: 1px;
-
             text-transform: uppercase;
         }
 
-        /* MOBILE */
+        footer a:hover {
+            opacity: 0.6;
+        }
 
         @media (max-width: 800px) {
-
             header {
-                height: 75px;
+                min-height: 75px;
             }
 
             nav {
@@ -422,14 +349,12 @@
             }
 
             .hero-image {
-                min-height: 500px;
+                min-height: 420px;
             }
 
             .intro {
                 grid-template-columns: 1fr;
-
                 padding: 90px 7vw;
-
                 gap: 50px;
             }
 
@@ -445,36 +370,32 @@
                 padding: 80px 7vw;
             }
 
-            .mentoria {
+            .consultoria {
                 padding: 90px 7vw;
             }
 
-            .mentoria-header {
+            .consultoria-header {
                 flex-direction: column;
-
                 align-items: flex-start;
-
                 gap: 35px;
             }
 
-            .mentoria-grid {
+            .consultoria-grid {
                 grid-template-columns: 1fr;
             }
 
-            .mentoria-item {
+            .consultoria-item {
                 border-right: none;
                 border-bottom: 1px solid #252321;
             }
 
-            .mentoria-item:last-child {
+            .consultoria-item:last-child {
                 border-bottom: none;
             }
 
             .cta {
                 grid-template-columns: 1fr;
-
                 padding: 90px 7vw;
-
                 gap: 50px;
             }
 
@@ -484,39 +405,37 @@
             }
         }
 
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition-duration: 0.01ms !important;
+            }
+        }
     </style>
 </head>
 
-
 <body>
-
 <header>
-
-    <div class="logo">
+    <a class="logo" href="#" aria-label="Projeto Autônomas - início">
         Projeto Autônomas
-    </div>
+    </a>
 
-    <nav>
+    <nav aria-label="Navegação principal">
         <a href="#sobre">Sobre</a>
-        <a href="#mentoria">Consultoria</a>
+        <a href="#consultoria">Consultoria</a>
         <a href="#contato">Contato</a>
     </nav>
-
 </header>
 
-
 <main>
-
-
-    <!-- HERO -->
-
     <section class="hero">
-
         <div class="hero-text">
-
-            <div class="small-title">
-                Projeto Autônomas
-            </div>
+            <div class="small-title">Projeto Autônomas</div>
 
             <h1>
                 Escolha<br>
@@ -530,40 +449,25 @@
                 mais clareza, estratégia e autonomia.
             </p>
 
-            <a class="hero-button" href="#mentoria">
+            <a class="hero-button" href="#consultoria">
                 Conheça a consultoria
             </a>
-
         </div>
-
 
         <div class="hero-image">
-
             <img
-                src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80"
-                alt="Mulher em ambiente profissional"
+                src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=85"
+                alt="Profissionais reunidas em ambiente de trabalho"
+                fetchpriority="high"
             >
-
         </div>
-
     </section>
 
-
-
-    <!-- SOBRE -->
-
     <section class="intro" id="sobre">
-
-        <div class="section-label">
-            01 — Sobre
-        </div>
+        <div class="section-label">01 — Sobre</div>
 
         <div class="intro-content">
-
-            <h2>
-                Autonomia começa
-                com uma escolha.
-            </h2>
+            <h2>Autonomia começa com uma escolha.</h2>
 
             <p>
                 O Projeto Autônomas nasceu para apoiar mulheres
@@ -572,39 +476,25 @@
                 mais consciente e estruturada.
             </p>
 
-            <br>
-
             <p>
                 Aqui, desenvolvimento, estratégia e troca caminham
                 juntos para ajudar cada mulher a construir seu
                 próprio caminho.
             </p>
-
         </div>
-
     </section>
 
-
-
-    <!-- PROJETO -->
-
     <section class="editorial">
-
         <div class="editorial-image">
-
             <img
-                src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=80"
-                alt="Mulheres trabalhando juntas"
+                src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1200&q=85"
+                alt="Equipe colaborando em um projeto profissional"
+                loading="lazy"
             >
-
         </div>
 
-
         <div class="editorial-text">
-
-            <div class="section-label">
-                O projeto
-            </div>
+            <div class="section-label">O projeto</div>
 
             <h2>
                 Mais que<br>
@@ -617,125 +507,67 @@
                 reconhecer possibilidades e transformar
                 intenção em movimento.
             </p>
-
         </div>
-
     </section>
 
-
-
-    <!-- CONSULTORIA -->
-
-    <section class="mentoria" id="mentoria">
-
-        <div class="mentoria-header">
-
-            <h2>
-                Consultoria
-            </h2>
+    <section class="consultoria" id="consultoria">
+        <div class="consultoria-header">
+            <h2>Consultoria</h2>
 
             <p>
                 Um processo pensado para acompanhar
                 mulheres em diferentes momentos de sua
                 jornada profissional.
             </p>
-
         </div>
 
-
-        <div class="mentoria-grid">
-
-
-            <div class="mentoria-item">
-
-                <div class="number">
-                    01
-                </div>
-
-                <h3>
-                    Clareza
-                </h3>
-
+        <div class="consultoria-grid">
+            <article class="consultoria-item">
+                <div class="number">01</div>
+                <h3>Clareza</h3>
                 <p>
                     Entender o momento atual, reconhecer
                     desafios e definir objetivos.
                 </p>
+            </article>
 
-            </div>
-
-
-            <div class="mentoria-item">
-
-                <div class="number">
-                    02
-                </div>
-
-                <h3>
-                    Estratégia
-                </h3>
-
+            <article class="consultoria-item">
+                <div class="number">02</div>
+                <h3>Estratégia</h3>
                 <p>
                     Transformar objetivos em caminhos
                     possíveis e ações práticas.
                 </p>
+            </article>
 
-            </div>
-
-
-            <div class="mentoria-item">
-
-                <div class="number">
-                    03
-                </div>
-
-                <h3>
-                    Movimento
-                </h3>
-
+            <article class="consultoria-item">
+                <div class="number">03</div>
+                <h3>Movimento</h3>
                 <p>
                     Colocar ideias em prática e construir
                     uma trajetória com mais autonomia.
                 </p>
-
-            </div>
-
-
+            </article>
         </div>
-
     </section>
 
-
-
-    <!-- FRASE -->
-
     <section class="quote">
-
         <h2>
             “A sua trajetória profissional
             também pode ter a sua própria
             assinatura.”
         </h2>
-
     </section>
 
-
-
-    <!-- CTA -->
-
     <section class="cta" id="contato">
-
         <div>
-
             <h2>
                 Vamos<br>
                 começar?
             </h2>
-
         </div>
 
-
         <div class="cta-right">
-
             <p>
                 Conheça o Projeto Autônomas e descubra
                 como a consultoria pode fazer parte da sua
@@ -744,33 +576,26 @@
 
             <a
                 class="hero-button"
-                href="https://instagram.com/projeto.autonomas"
+                href="https://www.instagram.com/projeto_autonomas_/"
                 target="_blank"
+                rel="noopener noreferrer"
             >
-                @projeto.autonomas
+                @projeto_autonomas_
             </a>
-
         </div>
-
     </section>
-
-
 </main>
 
-
-
 <footer>
+    <span>Projeto Autônomas</span>
 
-    <span>
-        Projeto Autônomas
-    </span>
-
-    <span>
+    <a
+        href="https://www.instagram.com/projeto_autonomas_/"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
         @projeto_autonomas_
-    </span>
-
+    </a>
 </footer>
-
-
 </body>
 </html>
